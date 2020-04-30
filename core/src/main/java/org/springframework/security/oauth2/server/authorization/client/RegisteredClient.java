@@ -33,19 +33,53 @@ import java.util.function.Consumer;
  * A representation of a client registration with an OAuth 2.0 Authorization Server.
  *
  * @author Joe Grandja
+<<<<<<< HEAD
  * @author Anoop Garlapati
  * @see <a target="_blank" href="https://tools.ietf.org/html/rfc6749#section-2">Section 2 Client Registration</a>
  * @since 0.0.1
+=======
+ * @author Paurav Munshi
+>>>>>>> branch 'authorization_endpoint_filter' of https://github.com/paurav-munshi/spring-authorization-server.git
  */
 public class RegisteredClient implements Serializable {
 	private static final long serialVersionUID = Version.SERIAL_VERSION_UID;
 	private String id;
 	private String clientId;
 	private String clientSecret;
+<<<<<<< HEAD
 	private Set<ClientAuthenticationMethod> clientAuthenticationMethods;
 	private Set<AuthorizationGrantType> authorizationGrantTypes;
 	private Set<String> redirectUris;
 	private Set<String> scopes;
+=======
+	private Set<ClientAuthenticationMethod> clientAuthenticationMethods = Collections.emptySet();
+	private Set<AuthorizationGrantType> authorizationGrantTypes = Collections.emptySet();
+	private Set<String> redirectUris = Collections.emptySet();
+	private Set<String> scopes = Collections.emptySet();
+	public String getId() {
+		return id;
+	}
+	public String getClientId() {
+		return clientId;
+	}
+	public String getClientSecret() {
+		return clientSecret;
+	}
+	public ClientAuthenticationMethod[] getClientAuthenticationMethods() {
+		return clientAuthenticationMethods.toArray(new ClientAuthenticationMethod[] {});
+	}
+	public AuthorizationGrantType[] getAuthorizationGrantTypes() {
+		return authorizationGrantTypes.toArray(new AuthorizationGrantType[] {});
+	}
+	public String[] getRedirectUris() {
+		return redirectUris.toArray(new String[] {});
+	}
+	public String[] getScopes() {
+		return scopes.toArray(new String[] {});
+	}
+	
+	
+>>>>>>> branch 'authorization_endpoint_filter' of https://github.com/paurav-munshi/spring-authorization-server.git
 
 	protected RegisteredClient() {
 	}
