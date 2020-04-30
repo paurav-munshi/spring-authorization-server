@@ -25,6 +25,7 @@ import java.util.Set;
 
 /**
  * @author Joe Grandja
+ * @author Paurav Munshi
  */
 public class RegisteredClient implements Serializable {
 	private static final long serialVersionUID = SpringSecurityCoreVersion.SERIAL_VERSION_UID;
@@ -35,5 +36,28 @@ public class RegisteredClient implements Serializable {
 	private Set<AuthorizationGrantType> authorizationGrantTypes = Collections.emptySet();
 	private Set<String> redirectUris = Collections.emptySet();
 	private Set<String> scopes = Collections.emptySet();
+	public String getId() {
+		return id;
+	}
+	public String getClientId() {
+		return clientId;
+	}
+	public String getClientSecret() {
+		return clientSecret;
+	}
+	public ClientAuthenticationMethod[] getClientAuthenticationMethods() {
+		return clientAuthenticationMethods.toArray(new ClientAuthenticationMethod[] {});
+	}
+	public AuthorizationGrantType[] getAuthorizationGrantTypes() {
+		return authorizationGrantTypes.toArray(new AuthorizationGrantType[] {});
+	}
+	public String[] getRedirectUris() {
+		return redirectUris.toArray(new String[] {});
+	}
+	public String[] getScopes() {
+		return scopes.toArray(new String[] {});
+	}
+	
+	
 
 }
